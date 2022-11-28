@@ -86,3 +86,10 @@ test('유저리스트에 Mike가 있는지', () => {
   const userList = ['Tom', 'Jane', 'Mike'];
   expect(userList).toContain(user);
 });
+
+// 에러 처리
+test('이거 에러 나나요?', () => {
+  expect(() => {
+    fn.throwErr();
+  }).toThrow('xx');
+});
