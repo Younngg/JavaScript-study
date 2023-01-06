@@ -99,6 +99,89 @@ fetch('https://google.com')
 
 ## Promise
 
+각 함수에 대한 데이터를 사용하기 위해 비동기적으로 데이터를 가져와야 한다고 가정
+
+```jsx
+function getName(cb) {
+  setTimeout(() => {
+    cb('Elice');
+  }, 2000);
+}
+
+function getAge(cb) {
+  setTimeout(() => {
+    cb(6);
+  }, 2000);
+}
+
+function getAddress(cb) {
+  setTimeout(() => {
+    cb('Seoul');
+  }, 2000);
+}
+```
+
+console.log를 한 번만 사용해야 한다면 어떻게 해야할까?
+
+```jsx
+getName((name) => {
+  getAge((age) => {
+    getAddress((address) => {
+      console.log(name, age, address);
+    });
+  });
+});
+```
+
+이렇게 콜백함수 안에 콜백함수를 반복 호출하면 name, age, address를 한꺼번에 접근할 수 있다. 비동기 함수가 3개 쓰이고 각 2초씩 걸리기 때문에 6초 뒤에 Elice 6 Seoul이라는 log가 나온다.
+
+이런 식으로 비동기 함수가 많아지면, 콜백 지옥이라고 부른다.
+
+Promise는 이 콜백 지옥을 해결하고자 나왔다.
+
+```jsx
+function getName() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Elice');
+    }, 2000);
+  });
+}
+
+function getAge() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(6);
+    }, 2000);
+  });
+}
+
+function getAddress() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Seoul');
+    }, 2000);
+  });
+}
+
+// promise
+Promise.all([getName(), getAge(), getAddress()]).then((res) => {
+  const [name, age, address] = res;
+  console.log(name, age, address);
+})(
+  // async/await
+  async () => {
+    const name = await getName();
+    const age = await getAge();
+    const address = await getAddress();
+
+    console.log(name, age, address);
+  }
+)();
+```
+
+### Promise
+
 - Promise API는 비동기 API 중 하나이다.
 - 태스크 큐가 아닌 **잡 큐(Job queue 혹은 microtask queue)**를 사용한다.
 - **잡 큐는 태스크 큐보다 우선순위가 높다.**
@@ -120,9 +203,6 @@ Promise.resolve().then(() => console.log('프로미스2'));
 // 타임아웃 1 타임아웃 2
 ```
 
-### Promise
-
-- 비동기 작업을 표현하는 자바스크립트 객체
 - 비동기 작업의 진행(`pending`), 성공(`resolved`, `fulfilled`), 실패(`rejected`) 상태를 표현
   - 성공과 실패는 작업이 끝났다는 의미에서 `settled`라고 한다.
 - 비동기 처리의 순서를 표현할 수 있음
