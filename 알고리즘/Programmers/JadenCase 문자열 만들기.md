@@ -16,7 +16,7 @@ function solution(s) {
   const words = s
     .toLowerCase()
     .split(' ')
-    .map((v) => v.substr(0, 1).toUpperCase() + v.slice(1));
+    .map((v) => v.slice(0, 1).toUpperCase() + v.slice(1));
 
   return words.join(' ');
 }
