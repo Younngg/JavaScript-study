@@ -58,7 +58,7 @@
 | 같은 숫자는 싫어        | [풀이](https://github.com/Younngg/TIL/blob/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Programmers/%EA%B0%99%EC%9D%80%20%EC%88%AB%EC%9E%90%EB%8A%94%20%EC%8B%AB%EC%96%B4.md)                                  |
 | 이상한 문자 만들기      | [풀이](https://github.com/Younngg/TIL/blob/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Programmers/%EC%9D%B4%EC%83%81%ED%95%9C%20%EB%AC%B8%EC%9E%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)                         |
 | 3진법 뒤집기            | [풀이](https://github.com/Younngg/TIL/blob/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Programmers/3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0.md)                                                      |
-| 예산                    | [풀이](https://github.com/Younngg/TIL/blob/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Programmers/3%EC%A7%84%EB%B2%95%20%EB%92%A4%EC%A7%91%EA%B8%B0.md)                                                      |
+| 예산                    | [풀이](https://github.com/Younngg/TIL/blob/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Programmers/%EC%98%88%EC%82%B0.md)                                                                                     |
 
 <br>
 <br>
